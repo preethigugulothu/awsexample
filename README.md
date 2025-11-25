@@ -14,6 +14,7 @@ docker ps
 //////NGIOS
 docker pull jasonrivers/nagios:latest
 docker start -ai nagios4
+docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
 Enter username : nagiosadmin 
 Enter password : nagios
 ////jenkinscript
