@@ -5,7 +5,13 @@ sudo apt nano
 //gitbash-git init,git add . ,git commit -m "first commit"
  git branch -M main
 git remote add origin https://github.com/preethigugulothu/awsexample.git
+git credential-manager reject https://github.com
+git config --global --unset credential.helper
 git push -u origin main
+////dockerfile
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+
 //cmd
 git clone https://github.com/preethigugulothu/awsexample.git
 docker build -t mywebapp .
@@ -48,6 +54,16 @@ pipeline {
         }
     }
 }
+/////////////kubernetes
+minikube start
+minikube status
+kubectl get deployments
+kubectl create deployment mynginx --image=nginx
+kubectl scale deployment mynginx --replicas=4
+kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+kubectl get service mynginx
+kubectl port-forward svc/mynginx 8081:80
+
 
 
 
